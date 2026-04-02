@@ -1,0 +1,26 @@
+#!/bin/sh
+cd "${0%/*}" || exit
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions
+
+SURFACE_DIR="constant/triSurface"
+SCALE="(0.001 0.001 0.001)"
+
+echo "Scaling STL files in $SURFACE_DIR from mm to m..."
+
+for stl in "$SURFACE_DIR"/*.stl
+do
+    [ -f "$stl" ] || continue
+
+    echo "  Processing: $stl"
+
+    tmp="${stl%.stl}_tmp.stl"
+
+    surfaceTransformPoints \
+        -scale "$SCALE" \
+        "$stl" \
+        "$tmp" \
+    && mv "$tmp" "$stl" \
+    || echo "  ERROR: failed to scale $stl"
+done
+
+echo "Done"

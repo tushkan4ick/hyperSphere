@@ -1,0 +1,17 @@
+# OpenFOAM
+[1-9]*
+0.*
+!0.orig
+!0.orig/**
+processor*
+postProcessing
+*.foam
+*.OpenFOAM
+log.*
+*.log
+/constant/polyMesh/*
+/constant/triSurface/*.eMesh
+/constant/extendedFeatureEdgeMesh/*
+
+# OS
+.DS_Store

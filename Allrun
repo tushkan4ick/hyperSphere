@@ -1,0 +1,17 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#-----------------------------------------------------------------------------
+
+runApplication blockMesh
+
+runApplication decomposePar
+
+export FOAM_MPIRUN_FLAGS="--use-hwthread-cpus"
+
+runParallel $(getApplication)
+
+runApplication reconstructPar -latestTime
+runApplication postPostprocess -func minPressure ReynoldsNumber
+
+#------------------------------------------------------------------------------

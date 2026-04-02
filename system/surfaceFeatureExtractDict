@@ -1,0 +1,54 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+inlet.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       135;
+}
+
+outlet.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       135;
+}
+
+hyperSphere.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       135;
+}
+
+sphere.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       90;
+}
+
+symmetry_1.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       90;
+}
+symmetry_2.stl
+{
+    extractionMethod    extractFromSurface;
+    includedAngle       90;
+}
+
+
+// ************************************************************************* //
