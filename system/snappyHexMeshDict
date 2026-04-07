@@ -16,7 +16,7 @@ FoamFile
 
 castellatedMesh true;
 snap            true;
-addLayers       true;
+addLayers       false;
 
 geometry
 {
@@ -38,19 +38,19 @@ castellatedMeshControls
 
     features
     (
-        { file "hyperSphere.eMesh"; level 4;}
+        { file "hyperSphere.eMesh"; level 3;}
     );
 
     refinementSurfaces
     {
-        inlet{level (3 3);}
+        inlet{level (4 4);}
         outlet{ level (4 4);}
         sphere{ level (8 8);}
-        symmetry_1{ level (3 3);}
-        symmetry_2{ level (3 3);}
+        symmetry_1{ level (5 5);}
+        symmetry_2{ level (5 5);}
     }
 
-    resolveFeatureAngle 15;
+    resolveFeatureAngle 5;
 
     refinementRegions
     {
@@ -62,13 +62,13 @@ castellatedMeshControls
 
 snapControls
 {
-    nSmoothPatch 2;
-    tolerance 3.0;
+    nSmoothPatch 4;
+    tolerance 1.0;
     nSolveIter 100;
     nRelaxIter 8;
     nFeatureSnapIter 20;
-    implicitFeatureSnap false;
-    explicitFeatureSnap true;
+    implicitFeatureSnap true;
+    explicitFeatureSnap false;
     multiRegionFeatureSnap true;
 }
 
@@ -86,14 +86,14 @@ addLayersControls
 
     expansionRatio 1.1;
     finalLayerThickness 0.25;
-    minThickness 0.05;
+    minThickness 0.001;
     nGrow 0;
-    featureAngle 30;
+    featureAngle 15;
     nRelaxIter 3;
     nSmoothSurfaceNormals 1;
     nSmoothNormals 3;
     nSmoothThickness 10;
-    maxFaceThicknessRatio 0.5;
+    maxFaceThicknessRatio 0.25;
     maxThicknessToMedialRatio 0.3;
     minMedialAxisAngle 90;
     nBufferCellsNoExtrude 0;

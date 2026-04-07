@@ -18,36 +18,36 @@ FoamFile
 inlet.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       135;
+    includedAngle       15;
 }
 
 outlet.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       135;
+    includedAngle       15;
 }
 
 hyperSphere.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       135;
+    includedAngle       15;
 }
 
 sphere.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       90;
+    includedAngle       15;
 }
 
 symmetry_1.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       90;
+    includedAngle       15;
 }
 symmetry_2.stl
 {
     extractionMethod    extractFromSurface;
-    includedAngle       90;
+    includedAngle       15;
 }
 
 
